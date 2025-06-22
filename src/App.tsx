@@ -5,23 +5,23 @@ import ImageGallery from './ImageGallery'
 
 const Home = () => {
   // Testimonial data
-  const testimonials = [
-    {
-      name: "Priya S.",
-      text: "The mehndi designs for my wedding were absolutely stunning! Everyone was impressed with the intricate details.",
-      service: "Bridal Mehndi"
-    },
-    {
-      name: "Anita R.",
-      text: "I learned so much in just a few classes. The techniques taught here have really improved my mehndi application skills.",
-      service: "Mehndi Classes"
-    },
-    {
-      name: "Meera K.",
-      text: "My makeup for the engagement ceremony was flawless. It lasted the entire event and photographs beautifully.",
-      service: "Engagement Makeup"
-    }
-  ];
+  // const testimonials = [
+  //   {
+  //     name: "Priya S.",
+  //     text: "The mehndi designs for my wedding were absolutely stunning! Everyone was impressed with the intricate details.",
+  //     service: "Bridal Mehndi"
+  //   },
+  //   {
+  //     name: "Anita R.",
+  //     text: "I learned so much in just a few classes. The techniques taught here have really improved my mehndi application skills.",
+  //     service: "Mehndi Classes"
+  //   },
+  //   {
+  //     name: "Meera K.",
+  //     text: "My makeup for the engagement ceremony was flawless. It lasted the entire event and photographs beautifully.",
+  //     service: "Engagement Makeup"
+  //   }
+  // ];
 
   return (
     <div className="page home">
@@ -450,7 +450,7 @@ function App() {
     <Router>
       <div className="app">
         <NavigationWithRouter />    
-        {/* <main>
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/mehndi" element={<Mehndi />} />
@@ -460,7 +460,7 @@ function App() {
             <Route path="/makeup" element={<Makeup />} />
             <Route path="/makeup-gallery" element={<ImageGallery serviceType="makeup" />} />
           </Routes>
-        </main> */}
+        </main>
       </div>
     </Router>
   )
