@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.14.0",
+    "lucide-react": "^0.522.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.2"
