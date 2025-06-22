@@ -2,26 +2,27 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { useState } from 'react'
 import './App.css'
 import ImageGallery from './ImageGallery'
+import ResponsiveNavbar from './components/NavBar'
 
 const Home = () => {
   // Testimonial data
-  // const testimonials = [
-  //   {
-  //     name: "Priya S.",
-  //     text: "The mehndi designs for my wedding were absolutely stunning! Everyone was impressed with the intricate details.",
-  //     service: "Bridal Mehndi"
-  //   },
-  //   {
-  //     name: "Anita R.",
-  //     text: "I learned so much in just a few classes. The techniques taught here have really improved my mehndi application skills.",
-  //     service: "Mehndi Classes"
-  //   },
-  //   {
-  //     name: "Meera K.",
-  //     text: "My makeup for the engagement ceremony was flawless. It lasted the entire event and photographs beautifully.",
-  //     service: "Engagement Makeup"
-  //   }
-  // ];
+  const testimonials = [
+    {
+      name: "Priya S.",
+      text: "The mehndi designs for my wedding were absolutely stunning! Everyone was impressed with the intricate details.",
+      service: "Bridal Mehndi"
+    },
+    {
+      name: "Anita R.",
+      text: "I learned so much in just a few classes. The techniques taught here have really improved my mehndi application skills.",
+      service: "Mehndi Classes"
+    },
+    {
+      name: "Meera K.",
+      text: "My makeup for the engagement ceremony was flawless. It lasted the entire event and photographs beautifully.",
+      service: "Engagement Makeup"
+    }
+  ];
 
   return (
     <div className="page home">
@@ -38,7 +39,7 @@ const Home = () => {
       </div>
 
       {/* Services Preview */}
-      {/* <section className="home-section">
+      <section className="home-section">
         <h2 className="section-title">Our Signature Services</h2>
         <div className="services-preview">
           <div className="service-preview-card">
@@ -60,10 +61,10 @@ const Home = () => {
             <Link to="/mehndi" className="preview-link">Enroll Now</Link>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Gallery Preview */}
-      {/* <section className="home-section gallery-preview-section">
+      <section className="home-section gallery-preview-section">
         <h2 className="section-title">Our Work</h2>
         <div className="gallery-preview">
           <div className="gallery-preview-item">
@@ -82,10 +83,10 @@ const Home = () => {
         <div className="view-more-container">
           <Link to="/mehndi-designs" className="view-more-link">View More Designs</Link>
         </div>
-      </section> */}
+      </section>
 
       {/* Testimonials */}
-      {/* <section className="home-section testimonials-section">
+      <section className="home-section testimonials-section">
         <h2 className="section-title">What Our Clients Say</h2>
         <div className="testimonials-container">
           {testimonials.map((testimonial, index) => (
@@ -100,10 +101,10 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* Call to Action */}
-      {/* <section className="home-section cta-section">
+      <section className="home-section cta-section">
         <div className="cta-content">
           <h2>Ready to Book Your Session?</h2>
           <p>Contact us today to schedule your appointment or class</p>
@@ -111,7 +112,7 @@ const Home = () => {
             <Link to="/mehndi" className="cta-button">Book Now</Link>
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }
@@ -449,7 +450,11 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <NavigationWithRouter />    
+        {/* <NavigationWithRouter />     */}
+
+
+      <ResponsiveNavbar />
+
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
