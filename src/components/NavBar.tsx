@@ -21,22 +21,22 @@ export default function ResponsiveNavbar() {
     { name: 'Home', href: '#home' },
     { 
       name: 'Mehndi', 
-      href: '#mehndi',
+      href: 'mehndi',
       dropdown: [
-        { name: 'Services', href: '#mehndi-services' },
-        { name: 'Gallery', href: '#mehndi-gallery' }
+        { name: 'Services', href: 'mehndi-services' },
+        { name: 'Gallery', href: 'mehndi-gallery' }
       ]
     },
     { 
       name: 'Makeup', 
-      href: '#makeup',
+      href: 'makeup',
       dropdown: [
-        { name: 'Services', href: '#makeup-services' },
-        { name: 'Gallery', href: '#makeup-gallery' }
+        { name: 'Services', href: 'makeup-services' },
+        { name: 'Gallery', href: 'makeup-gallery' }
       ]
     },
-    { name: 'Stats', href: '#stats' },
-    { name: 'About Us', href: '#about' },
+    { name: 'Stats', href: 'stats' },
+    { name: 'About Us', href: 'about' },
   ];
 
   return (

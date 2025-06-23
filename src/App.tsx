@@ -1,74 +1,81 @@
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
-import './App.css'
-import ImageGallery from './ImageGallery'
-import ResponsiveNavbar from './components/NavBar'
-import MehndiHeroSection from './components/HeroSection'
-import MehndiServices from './components/ServiceCards'
-import MehndiPortfolio from './components/ImageCards'
-import ClientTestimonials from './components/TestimonialCard'
-import CallToActionSection from './components/CallToActionSection'
+import { useState } from "react";
+import "./App.css";
+import ImageGallery from "./ImageGallery";
+import ResponsiveNavbar from "./components/NavBar";
+import MehndiHeroSection from "./components/HeroSection";
+import MehndiServices from "./components/ServiceCards";
+import MehndiPortfolio from "./components/ImageCards";
+import ClientTestimonials from "./components/TestimonialCard";
+import CallToActionSection from "./components/CallToActionSection";
+import AboutUsPage from "./pages/AboutUs";
 
 const Home = () => {
   return (
-   <div>
-     <MehndiHeroSection />
+    <div>
+      <MehndiHeroSection />
 
-<MehndiServices />
+      <MehndiServices />
 
-<MehndiPortfolio />
+      <MehndiPortfolio />
 
-<ClientTestimonials />
+      <ClientTestimonials />
 
-<CallToActionSection />
-   </div>
+      <CallToActionSection />
+    </div>
   );
-}
+};
 
 const Mehndi = () => {
   const [bookingData, setBookingData] = useState({
-    name: '',
-    email: '',
-    designStyle: 'traditional',
-    date: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    designStyle: "traditional",
+    date: "",
+    message: "",
+  });
 
   const [learningData, setLearningData] = useState({
-    name: '',
-    email: '',
-    skillLevel: 'beginner',
-    preferredTime: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    skillLevel: "beginner",
+    preferredTime: "",
+    message: "",
+  });
 
   const handleBookingSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Booking submitted:', bookingData)
-  }
+    e.preventDefault();
+    console.log("Booking submitted:", bookingData);
+  };
 
   const handleLearningSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Learning submitted:', learningData)
-  }
+    e.preventDefault();
+    console.log("Learning submitted:", learningData);
+  };
 
-  const handleBookingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setBookingData(prev => ({ ...prev, [name]: value }))
-  }
+  const handleBookingChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setBookingData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  
-
-  const handleLearningChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setLearningData(prev => ({ ...prev, [name]: value }))
-  }
+  const handleLearningChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setLearningData((prev) => ({ ...prev, [name]: value }));
+  };
 
   return (
     <div className="page mehndi">
       <h2>Mehndi Services</h2>
-      
+
       <div className="designs-grid">
         <div className="design-card">
           <h3>Traditional Indian</h3>
@@ -82,7 +89,6 @@ const Mehndi = () => {
           <h3>Modern Fusion</h3>
           <p>Contemporary designs with traditional elements</p>
         </div>
-        
       </div>
 
       <div className="forms-container">
@@ -122,7 +128,6 @@ const Mehndi = () => {
                 <option value="traditional">Traditional</option>
                 <option value="arabic">Arabic</option>
                 <option value="modern">Modern Fusion</option>
-                
               </select>
             </div>
             <div className="form-group">
@@ -145,7 +150,9 @@ const Mehndi = () => {
                 onChange={handleBookingChange}
               />
             </div>
-            <button type="submit" className="submit-button">Book Now</button>
+            <button type="submit" className="submit-button">
+              Book Now
+            </button>
           </form>
         </div>
 
@@ -208,21 +215,21 @@ const Mehndi = () => {
                 onChange={handleLearningChange}
               />
             </div>
-            <button type="submit" className="submit-button secondary">Enroll for Classes</button>
+            <button type="submit" className="submit-button secondary">
+              Enroll for Classes
+            </button>
           </form>
         </div>
       </div>
     </div>
-  )
-}
-
-
+  );
+};
 
 const Stats = () => {
   const stats = {
     designs: 1000,
-    clients: 500
-  }
+    clients: 500,
+  };
 
   return (
     <div className="page stats">
@@ -238,50 +245,8 @@ const Stats = () => {
         </div>
       </div>
     </div>
-  )
-}
-
-const AboutUs = () => (
-  <div className="page about-us">
-    <h2>About Our Mehndi Studio</h2>
-    <div className="about-section">
-      <div className="mission-vision">
-        <h3>Our Mission</h3>
-        <p>To preserve and promote the ancient art of mehndi while innovating with contemporary designs that reflect modern aesthetics.</p>
-        
-        <h3>Our Vision</h3>
-        <p>To become the most trusted name in mehndi artistry, known for our creativity, precision, and customer satisfaction.</p>
-      </div>
-
-      <div className="values-section">
-        <h3>Our Core Values</h3>
-        <div className="values-grid">
-          <div className="value-item">
-            <h4>Innovation</h4>
-            <p>Constantly evolving our methods and technology</p>
-          </div>
-          <div className="value-item">
-            <h4>Excellence</h4>
-            <p>Maintaining the highest standards in education</p>
-          </div>
-          <div className="value-item">
-            <h4>Accessibility</h4>
-            <p>Making quality education available to everyone</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="social-section">
-        <h3>Follow Us</h3>
-        <div className="social-links">
-          <a href="https://www.instagram.com/Nutan_Ramesh" target="_blank" rel="noopener noreferrer" className="instagram-link">
-            <span className="social-icon">📷</span> @Nutan_Ramesh
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-)
+  );
+};
 
 // Separate component to use the useLocation hook
 // const NavigationWithRouter = () => {
@@ -309,7 +274,7 @@ const AboutUs = () => (
 //     <nav className="main-nav">
 //       <div className="nav-container">
 //         <Link to="/" className="logo">Nutan's Makeup and Mehndi Studio</Link>
-        
+
 //         <div className="mobile-toggle" onClick={toggleMenu}>
 //           <span></span>
 //           <span></span>
@@ -318,9 +283,9 @@ const AboutUs = () => (
 
 //         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
 //           <Link to="/" className={pathname === '/' ? 'active' : ''}>Home</Link>
-          
+
 //           <div className="dropdown">
-//             <button 
+//             <button
 //               className={`dropdown-toggle ${pathname.includes('/mehndi') ? 'active' : ''}`}
 //               onClick={() => toggleDropdown('mehndi')}
 //             >
@@ -333,7 +298,7 @@ const AboutUs = () => (
 //           </div>
 
 //           <div className="dropdown">
-//             <button 
+//             <button
 //               className={`dropdown-toggle ${pathname.includes('/makeup') ? 'active' : ''}`}
 //               onClick={() => toggleDropdown('makeup')}
 //             >
@@ -344,7 +309,7 @@ const AboutUs = () => (
 //               <Link to="/makeup-gallery">Gallery</Link>
 //             </div>
 //           </div>
-          
+
 //           <Link to="/stats" className={pathname === '/stats' ? 'active' : ''}>Stats</Link>
 //           <Link to="/about" className={pathname === '/about' ? 'active' : ''}>About Us</Link>
 //         </div>
@@ -359,72 +324,92 @@ function App() {
   return (
     <Router>
       <div>
-      <ResponsiveNavbar />
+        <ResponsiveNavbar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/mehndi" element={<Mehndi />} />
-            <Route path="/mehndi-designs" element={<ImageGallery serviceType="mehndi" />} />
+            <Route
+              path="/mehndi-designs"
+              element={<ImageGallery serviceType="mehndi" />}
+            />
             <Route path="/stats" element={<Stats />} />
-            <Route path="/about" element={<AboutUs />} />
+            <Route path="/about" element={<AboutUsPage />} />
             <Route path="/makeup" element={<Makeup />} />
-            <Route path="/makeup-gallery" element={<ImageGallery serviceType="makeup" />} />
+            <Route
+              path="/makeup-gallery"
+              element={<ImageGallery serviceType="makeup" />}
+            />
           </Routes>
         </main>
       </div>
     </Router>
-  )
+  );
 }
 
 const Makeup = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    serviceType: 'party',
-    date: '',
-    message: ''
+    name: "",
+    email: "",
+    serviceType: "party",
+    date: "",
+    message: "",
   });
-  
+
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
     <div className="page makeup">
       <h2>Makeup Services</h2>
       <div className="services-grid">
-        
-
-        <div className="service-card" onClick={() => setSelectedService('baby')}>
+        <div
+          className="service-card"
+          onClick={() => setSelectedService("baby")}
+        >
           <div className="service-image">
             <img src="/baby-shower.svg" alt="Baby Shower" />
           </div>
           <h3>Baby Shower</h3>
           <p>Soft and elegant looks</p>
         </div>
-        <div className="service-card" onClick={() => setSelectedService('sider')}>
+        <div
+          className="service-card"
+          onClick={() => setSelectedService("sider")}
+        >
           <div className="service-image">
             <img src="/sider.svg" alt="Sider" />
           </div>
           <h3>Sider</h3>
           <p>Specialized makeup for sider occasions</p>
         </div>
-        <div className="service-card" onClick={() => setSelectedService('engagement')}>
+        <div
+          className="service-card"
+          onClick={() => setSelectedService("engagement")}
+        >
           <div className="service-image">
             <img src="/engagement.svg" alt="Engagement" />
           </div>
           <h3>Engagement Makeup</h3>
           <p>Perfect looks for your special day</p>
         </div>
-        <div className="service-card" onClick={() => setSelectedService('bridal')}>
+        <div
+          className="service-card"
+          onClick={() => setSelectedService("bridal")}
+        >
           <div className="service-image">
             <img src="/bridal-makeup.svg" alt="Bridal Makeup" />
           </div>
@@ -432,9 +417,9 @@ const Makeup = () => {
           <p>Stunning looks for your wedding day</p>
         </div>
       </div>
-      
+
       {selectedService && <ImageGallery serviceType={selectedService} />}
-      
+
       <form onSubmit={handleSubmit} className="makeup-form">
         <div className="form-group">
           <label htmlFor="name">Full Name</label>
@@ -466,7 +451,6 @@ const Makeup = () => {
             value={formData.serviceType}
             onChange={handleChange}
           >
-            
             <option value="party">Model shoot</option>
             <option value="baby">Baby Shower</option>
             <option value="sider">Sider</option>
@@ -494,10 +478,12 @@ const Makeup = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="submit-button">Book Now</button>
+        <button type="submit" className="submit-button">
+          Book Now
+        </button>
       </form>
     </div>
   );
 };
 
-export default App
+export default App;
