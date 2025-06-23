@@ -1,118 +1,28 @@
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+// import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import './App.css'
 import ImageGallery from './ImageGallery'
+import ResponsiveNavbar from './components/NavBar'
+import MehndiHeroSection from './components/HeroSection'
+import MehndiServices from './components/ServiceCards'
+import MehndiPortfolio from './components/ImageCards'
+import ClientTestimonials from './components/TestimonialCard'
+import CallToActionSection from './components/CallToActionSection'
 
 const Home = () => {
-  // Testimonial data
-  // const testimonials = [
-  //   {
-  //     name: "Priya S.",
-  //     text: "The mehndi designs for my wedding were absolutely stunning! Everyone was impressed with the intricate details.",
-  //     service: "Bridal Mehndi"
-  //   },
-  //   {
-  //     name: "Anita R.",
-  //     text: "I learned so much in just a few classes. The techniques taught here have really improved my mehndi application skills.",
-  //     service: "Mehndi Classes"
-  //   },
-  //   {
-  //     name: "Meera K.",
-  //     text: "My makeup for the engagement ceremony was flawless. It lasted the entire event and photographs beautifully.",
-  //     service: "Engagement Makeup"
-  //   }
-  // ];
-
   return (
-    <div className="page home">
-      {/* Hero Section */}
-      <div className="hero-section">
-        <div className="hero-content">
-          <h1>Transform Your Special Moments</h1>
-          <p className="hero-subtitle">Expert Mehndi & Makeup Services for All Occasions</p>
-          <div className="cta-buttons">
-            <Link to="/mehndi" className="cta-button">Explore Mehndi</Link>
-            <Link to="/makeup" className="cta-button secondary">Discover Makeup</Link>
-          </div>
-        </div>
-      </div>
+   <div>
+     <MehndiHeroSection />
 
-      {/* Services Preview */}
-      {/* <section className="home-section">
-        <h2 className="section-title">Our Signature Services</h2>
-        <div className="services-preview">
-          <div className="service-preview-card">
-            <div className="service-preview-image mehndi-preview"></div>
-            <h3>Artistic Mehndi</h3>
-            <p>Traditional, Arabic, and fusion designs for all occasions</p>
-            <Link to="/mehndi" className="preview-link">View Services</Link>
-          </div>
-          <div className="service-preview-card">
-            <div className="service-preview-image makeup-preview"></div>
-            <h3>Professional Makeup</h3>
-            <p>Bridal, engagement, and special event makeup</p>
-            <Link to="/makeup" className="preview-link">View Services</Link>
-          </div>
-          <div className="service-preview-card">
-            <div className="service-preview-image classes-preview"></div>
-            <h3>Mehndi Classes</h3>
-            <p>Learn from experts with personalized guidance</p>
-            <Link to="/mehndi" className="preview-link">Enroll Now</Link>
-          </div>
-        </div>
-      </section> */}
+<MehndiServices />
 
-      {/* Gallery Preview */}
-      {/* <section className="home-section gallery-preview-section">
-        <h2 className="section-title">Our Work</h2>
-        <div className="gallery-preview">
-          <div className="gallery-preview-item">
-            <img src="/mehndi-images/IMG_0009.JPG" alt="Mehndi design preview" />
-          </div>
-          <div className="gallery-preview-item">
-            <img src="/makeup-images/ABP_7130.jpg" alt="Makeup preview" />
-          </div>
-          <div className="gallery-preview-item">
-            <img src="/mehndi-images/IMG_1836.JPG" alt="Mehndi design preview" />
-          </div>
-          <div className="gallery-preview-item">
-            <img src="/makeup-images/ABP_8211.jpg" alt="Makeup preview" />
-          </div>
-        </div>
-        <div className="view-more-container">
-          <Link to="/mehndi-designs" className="view-more-link">View More Designs</Link>
-        </div>
-      </section> */}
+<MehndiPortfolio />
 
-      {/* Testimonials */}
-      {/* <section className="home-section testimonials-section">
-        <h2 className="section-title">What Our Clients Say</h2>
-        <div className="testimonials-container">
-          {testimonials.map((testimonial, index) => (
-            <div className="testimonial-card" key={index}>
-              <div className="testimonial-content">
-                <p>"{testimonial.text}"</p>
-              </div>
-              <div className="testimonial-author">
-                <p className="author-name">{testimonial.name}</p>
-                <p className="author-service">{testimonial.service}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
+<ClientTestimonials />
 
-      {/* Call to Action */}
-      {/* <section className="home-section cta-section">
-        <div className="cta-content">
-          <h2>Ready to Book Your Session?</h2>
-          <p>Contact us today to schedule your appointment or class</p>
-          <div className="cta-buttons">
-            <Link to="/mehndi" className="cta-button">Book Now</Link>
-          </div>
-        </div>
-      </section> */}
-    </div>
+<CallToActionSection />
+   </div>
   );
 }
 
@@ -374,82 +284,82 @@ const AboutUs = () => (
 )
 
 // Separate component to use the useLocation hook
-const NavigationWithRouter = () => {
-  const location = useLocation();
-  return <Navigation pathname={location.pathname} />
-}
+// const NavigationWithRouter = () => {
+//   const location = useLocation();
+//   return <Navigation pathname={location.pathname} />
+// }
 
-interface NavigationProps {
-  pathname: string;
-}
+// interface NavigationProps {
+//   pathname: string;
+// }
 
-const Navigation = ({ pathname }: NavigationProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+// const Navigation = ({ pathname }: NavigationProps) => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+//   const toggleMenu = () => {
+//     setIsOpen(!isOpen);
+//   };
 
-  const toggleDropdown = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
+//   const toggleDropdown = (dropdown: string) => {
+//     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+//   };
 
-  return (
-    <nav className="main-nav">
-      <div className="nav-container">
-        <Link to="/" className="logo">Nutan's Makeup and Mehndi Studio</Link>
+//   return (
+//     <nav className="main-nav">
+//       <div className="nav-container">
+//         <Link to="/" className="logo">Nutan's Makeup and Mehndi Studio</Link>
         
-        <div className="mobile-toggle" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+//         <div className="mobile-toggle" onClick={toggleMenu}>
+//           <span></span>
+//           <span></span>
+//           <span></span>
+//         </div>
 
-        <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <Link to="/" className={pathname === '/' ? 'active' : ''}>Home</Link>
+//         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
+//           <Link to="/" className={pathname === '/' ? 'active' : ''}>Home</Link>
           
-          <div className="dropdown">
-            <button 
-              className={`dropdown-toggle ${pathname.includes('/mehndi') ? 'active' : ''}`}
-              onClick={() => toggleDropdown('mehndi')}
-            >
-              Mehndi <span className="dropdown-icon">▼</span>
-            </button>
-            <div className={`dropdown-menu ${activeDropdown === 'mehndi' ? 'show' : ''}`}>
-              <Link to="/mehndi">Services</Link>
-              <Link to="/mehndi-designs">Design Gallery</Link>
-            </div>
-          </div>
+//           <div className="dropdown">
+//             <button 
+//               className={`dropdown-toggle ${pathname.includes('/mehndi') ? 'active' : ''}`}
+//               onClick={() => toggleDropdown('mehndi')}
+//             >
+//               Mehndi <span className="dropdown-icon">▼</span>
+//             </button>
+//             <div className={`dropdown-menu ${activeDropdown === 'mehndi' ? 'show' : ''}`}>
+//               <Link to="/mehndi">Services</Link>
+//               <Link to="/mehndi-designs">Design Gallery</Link>
+//             </div>
+//           </div>
 
-          <div className="dropdown">
-            <button 
-              className={`dropdown-toggle ${pathname.includes('/makeup') ? 'active' : ''}`}
-              onClick={() => toggleDropdown('makeup')}
-            >
-              Makeup <span className="dropdown-icon">▼</span>
-            </button>
-            <div className={`dropdown-menu ${activeDropdown === 'makeup' ? 'show' : ''}`}>
-              <Link to="/makeup">Services</Link>
-              <Link to="/makeup-gallery">Gallery</Link>
-            </div>
-          </div>
+//           <div className="dropdown">
+//             <button 
+//               className={`dropdown-toggle ${pathname.includes('/makeup') ? 'active' : ''}`}
+//               onClick={() => toggleDropdown('makeup')}
+//             >
+//               Makeup <span className="dropdown-icon">▼</span>
+//             </button>
+//             <div className={`dropdown-menu ${activeDropdown === 'makeup' ? 'show' : ''}`}>
+//               <Link to="/makeup">Services</Link>
+//               <Link to="/makeup-gallery">Gallery</Link>
+//             </div>
+//           </div>
           
-          <Link to="/stats" className={pathname === '/stats' ? 'active' : ''}>Stats</Link>
-          <Link to="/about" className={pathname === '/about' ? 'active' : ''}>About Us</Link>
-        </div>
-      </div>
-    </nav>
-  );
-}
+//           <Link to="/stats" className={pathname === '/stats' ? 'active' : ''}>Stats</Link>
+//           <Link to="/about" className={pathname === '/about' ? 'active' : ''}>About Us</Link>
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// }
 
 // This component was duplicated - removing the incorrect version
 
 function App() {
   return (
     <Router>
-      <div className="app">
-        <NavigationWithRouter />    
+      <div>
+      <ResponsiveNavbar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
