@@ -18,7 +18,7 @@ export default function ResponsiveNavbar() {
   };
 
   const navItems = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { 
       name: 'Mehndi', 
       href: 'mehndi',
