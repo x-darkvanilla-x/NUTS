@@ -10,6 +10,7 @@ import MehndiPortfolio from "./components/ImageCards";
 import ClientTestimonials from "./components/TestimonialCard";
 import CallToActionSection from "./components/CallToActionSection";
 import AboutUsPage from "./pages/AboutUs";
+import ImpactSection from "./pages/Stats";
 
 const Home = () => {
   return (
@@ -225,29 +226,6 @@ const Mehndi = () => {
   );
 };
 
-const Stats = () => {
-  const stats = {
-    designs: 1000,
-    clients: 500,
-  };
-
-  return (
-    <div className="page stats">
-      <h2>Our Impact</h2>
-      <div className="stats-grid">
-        <div className="stat-card">
-          <h3>{stats.designs}+</h3>
-          <p>Unique Designs Created</p>
-        </div>
-        <div className="stat-card">
-          <h3>{stats.clients}+</h3>
-          <p>Happy Clients</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 // Separate component to use the useLocation hook
 // const NavigationWithRouter = () => {
 //   const location = useLocation();
@@ -333,7 +311,7 @@ function App() {
               path="/mehndi-designs"
               element={<ImageGallery serviceType="mehndi" />}
             />
-            <Route path="/stats" element={<Stats />} />
+            <Route path="/stats" element={<ImpactSection />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/makeup" element={<Makeup />} />
             <Route
