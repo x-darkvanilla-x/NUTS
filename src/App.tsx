@@ -13,6 +13,7 @@ import AboutUsPage from "./pages/AboutUs";
 import ImpactSection from "./pages/Stats";
 import MehndiGallery from "./pages/MehndiGallery";
 import MakeupGallery from "./pages/MakeupGallery";
+import MehndiServicesPage from "./pages/MehndiServices";
 
 const Home = () => {
   return (
@@ -26,204 +27,6 @@ const Home = () => {
       <ClientTestimonials />
 
       <CallToActionSection />
-    </div>
-  );
-};
-
-const Mehndi = () => {
-  const [bookingData, setBookingData] = useState({
-    name: "",
-    email: "",
-    designStyle: "traditional",
-    date: "",
-    message: "",
-  });
-
-  const [learningData, setLearningData] = useState({
-    name: "",
-    email: "",
-    skillLevel: "beginner",
-    preferredTime: "",
-    message: "",
-  });
-
-  const handleBookingSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Booking submitted:", bookingData);
-  };
-
-  const handleLearningSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Learning submitted:", learningData);
-  };
-
-  const handleBookingChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setBookingData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleLearningChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setLearningData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  return (
-    <div className="page mehndi">
-      <h2>Mehndi Services</h2>
-
-      <div className="designs-grid">
-        <div className="design-card">
-          <h3>Traditional Indian</h3>
-          <p>Intricate peacock and floral patterns</p>
-        </div>
-        <div className="design-card">
-          <h3>Arabic</h3>
-          <p>Flowing patterns with bold outlines</p>
-        </div>
-        <div className="design-card">
-          <h3>Modern Fusion</h3>
-          <p>Contemporary designs with traditional elements</p>
-        </div>
-      </div>
-
-      <div className="forms-container">
-        <div className="form-section">
-          <h3>Book Mehndi Session</h3>
-          <form onSubmit={handleBookingSubmit} className="booking-form">
-            <div className="form-group">
-              <label htmlFor="booking-name">Full Name</label>
-              <input
-                type="text"
-                id="booking-name"
-                name="name"
-                value={bookingData.name}
-                onChange={handleBookingChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="booking-email">Email</label>
-              <input
-                type="email"
-                id="booking-email"
-                name="email"
-                value={bookingData.email}
-                onChange={handleBookingChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="designStyle">Design Style</label>
-              <select
-                id="designStyle"
-                name="designStyle"
-                value={bookingData.designStyle}
-                onChange={handleBookingChange}
-              >
-                <option value="traditional">Traditional</option>
-                <option value="arabic">Arabic</option>
-                <option value="modern">Modern Fusion</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="date">Preferred Date</label>
-              <input
-                type="date"
-                id="date"
-                name="date"
-                value={bookingData.date}
-                onChange={handleBookingChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="booking-message">Message (Optional)</label>
-              <textarea
-                id="booking-message"
-                name="message"
-                value={bookingData.message}
-                onChange={handleBookingChange}
-              />
-            </div>
-            <button type="submit" className="submit-button">
-              Book Now
-            </button>
-          </form>
-        </div>
-
-        <div className="form-section">
-          <h3>Learn Mehndi Art</h3>
-          <form onSubmit={handleLearningSubmit} className="learning-form">
-            <div className="form-group">
-              <label htmlFor="learning-name">Full Name</label>
-              <input
-                type="text"
-                id="learning-name"
-                name="name"
-                value={learningData.name}
-                onChange={handleLearningChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="learning-email">Email</label>
-              <input
-                type="email"
-                id="learning-email"
-                name="email"
-                value={learningData.email}
-                onChange={handleLearningChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="skillLevel">Skill Level</label>
-              <select
-                id="skillLevel"
-                name="skillLevel"
-                value={learningData.skillLevel}
-                onChange={handleLearningChange}
-              >
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="preferredTime">Preferred Time</label>
-              <input
-                type="text"
-                id="preferredTime"
-                name="preferredTime"
-                value={learningData.preferredTime}
-                onChange={handleLearningChange}
-                placeholder="e.g. Weekends, Evenings"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="learning-message">Message (Optional)</label>
-              <textarea
-                id="learning-message"
-                name="message"
-                value={learningData.message}
-                onChange={handleLearningChange}
-              />
-            </div>
-            <button type="submit" className="submit-button secondary">
-              Enroll for Classes
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
   );
 };
@@ -308,7 +111,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/mehndi" element={<Mehndi />} />
+            <Route path="/mehndi" element={<MehndiServicesPage />} />
             <Route
               path="/mehndi-gallery"
               element={<MehndiGallery />}
