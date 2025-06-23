@@ -12,6 +12,7 @@ import CallToActionSection from "./components/CallToActionSection";
 import AboutUsPage from "./pages/AboutUs";
 import ImpactSection from "./pages/Stats";
 import MehndiGallery from "./pages/MehndiGallery";
+import MakeupGallery from "./pages/MakeupGallery";
 
 const Home = () => {
   return (
@@ -317,7 +318,7 @@ function App() {
             <Route path="/makeup" element={<Makeup />} />
             <Route
               path="/makeup-gallery"
-              element={<ImageGallery serviceType="makeup" />}
+              element={<MakeupGallery />}
             />
           </Routes>
         </main>
