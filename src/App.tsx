@@ -11,6 +11,7 @@ import ClientTestimonials from "./components/TestimonialCard";
 import CallToActionSection from "./components/CallToActionSection";
 import AboutUsPage from "./pages/AboutUs";
 import ImpactSection from "./pages/Stats";
+import MehndiGallery from "./pages/MehndiGallery";
 
 const Home = () => {
   return (
@@ -308,8 +309,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/mehndi" element={<Mehndi />} />
             <Route
-              path="/mehndi-designs"
-              element={<ImageGallery serviceType="mehndi" />}
+              path="/mehndi-gallery"
+              element={<MehndiGallery />}
             />
             <Route path="/stats" element={<ImpactSection />} />
             <Route path="/about" element={<AboutUsPage />} />
