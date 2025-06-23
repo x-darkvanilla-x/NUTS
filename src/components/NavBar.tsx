@@ -23,7 +23,7 @@ export default function ResponsiveNavbar() {
       name: 'Mehndi', 
       href: 'mehndi',
       dropdown: [
-        { name: 'Services', href: 'mehndi-services' },
+        { name: 'Services', href: 'mehndi' },
         { name: 'Gallery', href: 'mehndi-gallery' }
       ]
     },
@@ -31,7 +31,7 @@ export default function ResponsiveNavbar() {
       name: 'Makeup', 
       href: 'makeup',
       dropdown: [
-        { name: 'Services', href: 'makeup-services' },
+        { name: 'Services', href: 'makeup' },
         { name: 'Gallery', href: 'makeup-gallery' }
       ]
     },
