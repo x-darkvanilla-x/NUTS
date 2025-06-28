@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 
 const ServiceCard = ({ 
   image, 
@@ -12,6 +13,7 @@ const ServiceCard = ({
   buttonText: string;
   buttonAction: () => void;
 }) => {
+
   return (
     <div className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl h-full">
       <div className="relative h-64 overflow-hidden">
@@ -45,27 +47,30 @@ const ServiceCard = ({
 };
 
 const MehndiServices = () => {
+  const navigate = useNavigate();
+
+
   const services = [
     {
       image: "../mehndi-images/IMG_1837.JPG",
       title: "Artistic Mehndi",
       description: "Traditional, Arabic, and fusion designs for all occasions",
       buttonText: "View Services",
-      buttonAction: () => console.log("Artistic Mehndi clicked")
+      buttonAction: () => {navigate("/mehndi")}
     },
     {
       image: "../makeup-images/ABP_7169.jpg",
       title: "Professional Makeup",
       description: "Bridal, engagement, and special event makeup",
       buttonText: "View Services",
-      buttonAction: () => console.log("Professional Makeup clicked")
+      buttonAction: () => {navigate("/makeup")}
     },
     {
       image: "../mehndi-images/WhatsApp Image 2025-04-25 at 13.17.57_fcfe7502.jpg",
       title: "Mehndi Classes",
       description: "Learn from experts with personalized guidance",
       buttonText: "Enroll Now",
-      buttonAction: () => console.log("Mehndi Classes clicked")
+      buttonAction: () => {navigate("/mehndi")}
     }
   ];
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const MehndiPortfolio = () => {
+
   const [selectedImage, setSelectedImage] = useState<any>(null);
   const [currentIndex, setCurrentIndex] = useState<any>(0);
 
@@ -14,7 +15,7 @@ const MehndiPortfolio = () => {
     },
     {
       id: 2,
-      src: "../makeup-images/ABP_7130.jpg",
+      src: "../makeup-images/WhatsApp Image 2025-06-23 at 21.55.52_c138067e.jpg",
       alt: "Elegant bride with traditional jewelry and makeup",
       category: "Bridal Makeup"
     },
@@ -117,11 +118,11 @@ const MehndiPortfolio = () => {
         </div>
 
         {/* View More Button */}
-        <div className="text-center">
-          <button className="bg-amber-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-amber-900 hover:shadow-xl transform hover:scale-105 active:scale-95">
+        {/* <div className="text-center">
+          <button onClick={()=>{navigate("/gallery")}} className="bg-amber-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-amber-900 hover:shadow-xl transform hover:scale-105 active:scale-95">
             View More Designs
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Modal */}
