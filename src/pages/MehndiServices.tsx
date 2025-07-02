@@ -55,9 +55,30 @@ export default function MehndiServicesPage() {
 
   const handleBookingSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    alert(
-      `Thank you ${bookingForm.fullName}! Your mehndi session booking request has been submitted. We'll contact you soon at ${bookingForm.email}.`
-    );
+
+    // Format the message for WhatsApp
+    const message = `
+  *New Mehndi Session Booking Request*
+  
+  *Name:* ${bookingForm.fullName}
+  *Email:* ${bookingForm.email}
+  *Design Style:* ${bookingForm.designStyle}
+  *Preferred Date:* ${bookingForm.preferredDate}
+  *Message:* ${bookingForm.message}
+    `.trim();
+
+    // Your WhatsApp number (replace with your actual number)
+    const phoneNumber = "7977291262"; // Replace with your WhatsApp number
+
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    // Open WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    // Reset form
     setBookingForm({
       fullName: "",
       email: "",
@@ -70,9 +91,30 @@ export default function MehndiServicesPage() {
 
   const handleLearningSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    alert(
-      `Thank you ${learningForm.fullName}! Your mehndi art learning request has been submitted. We'll contact you soon at ${learningForm.email}.`
-    );
+
+    // Format the message for WhatsApp
+    const message = `
+  *New Mehndi Art Learning Request*
+  
+  *Name:* ${learningForm.fullName}
+  *Email:* ${learningForm.email}
+  *Design Style:* ${learningForm.designStyle}
+  *Preferred Time:* ${learningForm.preferredTime}
+  *Message:* ${learningForm.message}
+    `.trim();
+
+    // Your WhatsApp number (replace with your actual number)
+    const phoneNumber = "7977291262"; // Replace with your WhatsApp number
+
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    // Open WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    // Reset form
     setLearningForm({
       fullName: "",
       email: "",
